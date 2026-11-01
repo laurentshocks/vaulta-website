@@ -3,174 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VAULTA — Cut-proof, waterproof laptop bags with fingerprint lock</title>
-  <meta name="description" content="VAULTA laptop bags: cut-resistant, waterproof, with a built-in fingerprint lock. Made for commuters, travellers and teams across Europe." />
+  <title>VAULTA — Anti-theft bags with fingerprint lock & cut-resistant fabric</title>
+  <meta name="description" content="Anti-theft backpacks and crossbody bags with fingerprint locks, cut-resistant fabric, Find My tracking and RFID protection. For commuters, travellers and teams across Europe." />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ============================================================
        COLORS & BASICS — change the brand colors here
        ============================================================ */
     :root {
-      --bg: #0f1113;
-      --bg-soft: #171a1d;
-      --card: #1d2125;
-      --line: #2a2f35;
+      --bg: #0e0f11;
+      --bg-soft: #16181b;
+      --card: #1b1e22;
+      --line: #2a2e34;
       --text: #eef0f2;
       --muted: #9aa3ad;
-      --accent: #ff8a3d;        /* main brand color (orange) */
+      --accent: #ff8a3d;          /* main brand color (orange) */
       --accent-dark: #e5702a;
+      --photo-bg: #f4f3f1;        /* background behind product photos */
       --ok: #3ccf91;
-      --radius: 14px;
-      --max: 1140px;
+      --radius: 16px;
+      --max: 1200px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: "Inter", system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+      background: var(--bg); color: var(--text);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
     }
-    h1, h2, h3 { font-family: "Space Grotesk", sans-serif; line-height: 1.15; }
+    h1, h2, h3, h4 { font-family: "Space Grotesk", "Inter", sans-serif; line-height: 1.12; }
     a { color: inherit; text-decoration: none; }
-    img, svg { display: block; max-width: 100%; }
+    img { display: block; max-width: 100%; }
+    button { font: inherit; }
     .container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 20px; }
     section { padding: 96px 0; }
-    .eyebrow {
-      color: var(--accent); font-weight: 600; font-size: .8rem;
-      letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px;
-    }
-    .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 16px; }
+    .eyebrow { color: var(--accent); font-weight: 600; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.7rem); margin-bottom: 16px; }
     .section-lead { color: var(--muted); max-width: 640px; font-size: 1.05rem; }
+    .soft { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 
-    /* Buttons */
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
       padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: .95rem;
       border: 1px solid transparent; cursor: pointer; transition: .2s ease;
-      font-family: inherit;
     }
     .btn-primary { background: var(--accent); color: #111; }
     .btn-primary:hover { background: var(--accent-dark); }
     .btn-ghost { border-color: var(--line); color: var(--text); background: transparent; }
     .btn-ghost:hover { border-color: var(--muted); }
+    .btn-sm { padding: 9px 16px; font-size: .85rem; }
 
-    /* ============================================================
-       NAVIGATION
-       ============================================================ */
+    /* ================= NAVIGATION ================= */
     header {
       position: sticky; top: 0; z-index: 50;
-      background: rgba(15,17,19,.85); backdrop-filter: blur(10px);
+      background: rgba(14,15,17,.86); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
     .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-    .logo { font-family: "Space Grotesk"; font-weight: 700; font-size: 1.35rem; letter-spacing: .08em; }
+    .logo { font-family: "Space Grotesk", "Inter", sans-serif; font-weight: 700; font-size: 1.35rem; letter-spacing: .1em; }
     .logo span { color: var(--accent); }
     .nav-links { display: flex; gap: 28px; color: var(--muted); font-size: .95rem; }
     .nav-links a:hover { color: var(--text); }
-    .nav .btn { padding: 10px 18px; }
     .menu-toggle { display: none; background: none; border: 0; color: var(--text); font-size: 1.6rem; cursor: pointer; }
 
-    /* ============================================================
-       HERO
-       ============================================================ */
-    .hero { padding: 80px 0 96px; }
-    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
-    .hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); margin-bottom: 20px; }
+    /* ================= HERO ================= */
+    .hero { position: relative; min-height: 640px; display: flex; align-items: center; overflow: hidden; padding: 0; }
+    .hero-img { position: absolute; inset: 0; background: url("images/hero.jpg") center right / cover no-repeat; }
+    .hero-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,15,17,.97) 0%, rgba(14,15,17,.85) 38%, rgba(14,15,17,.1) 75%); }
+    .hero .container { position: relative; padding-top: 96px; padding-bottom: 96px; }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.4rem); margin-bottom: 22px; max-width: 640px; }
     .hero h1 em { font-style: normal; color: var(--accent); }
-    .hero p.lead { color: var(--muted); font-size: 1.15rem; max-width: 520px; margin-bottom: 32px; }
+    .hero p.lead { color: #c3c9cf; font-size: 1.15rem; max-width: 520px; margin-bottom: 32px; }
     .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
-    .badges { display: flex; flex-wrap: wrap; gap: 10px; }
-    .badge {
-      font-size: .82rem; color: var(--muted); border: 1px solid var(--line);
-      padding: 6px 12px; border-radius: 999px; background: var(--bg-soft);
-    }
+    .badges { display: flex; flex-wrap: wrap; gap: 10px; max-width: 600px; }
+    .badge { font-size: .82rem; color: #c3c9cf; border: 1px solid rgba(255,255,255,.14); padding: 6px 12px; border-radius: 999px; background: rgba(0,0,0,.35); }
     .badge b { color: var(--text); font-weight: 600; }
-    .hero-visual {
-      background: radial-gradient(circle at 50% 40%, #2a2016 0%, var(--bg-soft) 65%);
-      border: 1px solid var(--line); border-radius: 24px; padding: 40px;
-      aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center;
-    }
 
-    /* ============================================================
-       FEATURES
-       ============================================================ */
-    .features { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
-    .card {
-      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
-      padding: 28px;
-    }
-    .icon {
-      width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center;
-      background: rgba(255,138,61,.12); color: var(--accent); margin-bottom: 18px;
-    }
-    .card h3 { font-size: 1.15rem; margin-bottom: 8px; }
-    .card p { color: var(--muted); font-size: .95rem; }
+    /* ================= PROTECTION (photo features) ================= */
+    .protect-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 48px; }
+    .protect { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+    .protect img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .protect div { padding: 22px; }
+    .protect h3 { font-size: 1.1rem; margin-bottom: 6px; }
+    .protect p { color: var(--muted); font-size: .92rem; }
 
-    /* How it works */
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; counter-reset: step; }
-    .step { position: relative; padding: 28px; border-left: 2px solid var(--accent); background: var(--bg-soft); border-radius: 0 var(--radius) var(--radius) 0; }
-    .step::before {
-      counter-increment: step; content: "0" counter(step);
-      font-family: "Space Grotesk"; font-size: 2rem; color: var(--accent); display: block; margin-bottom: 8px;
-    }
-    .step h3 { margin-bottom: 6px; }
-    .step p { color: var(--muted); font-size: .95rem; }
+    /* ================= SHOP ================= */
+    .shop-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter { background: transparent; border: 1px solid var(--line); color: var(--muted); padding: 8px 16px; border-radius: 999px; cursor: pointer; font-size: .88rem; }
+    .filter:hover { color: var(--text); }
+    .filter.active { background: var(--text); color: #111; border-color: var(--text); }
+    .products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 36px; }
+    .product { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform .2s ease, border-color .2s ease; }
+    .product:hover { transform: translateY(-3px); border-color: #3a4048; }
+    .product-photo { background: var(--photo-bg); aspect-ratio: 1/1; cursor: pointer; position: relative; overflow: hidden; }
+    .product-photo img { position: absolute; inset: 24px; width: calc(100% - 48px); height: calc(100% - 48px); object-fit: contain; mix-blend-mode: multiply; transition: transform .3s ease; }
+    .product:hover .product-photo img { transform: scale(1.03); }
+    .product-photo.fill img { inset: 0; width: 100%; height: 100%; object-fit: cover; mix-blend-mode: normal; }
+    .ribbon { z-index: 1; }
+    .ribbon { position: absolute; top: 14px; left: 14px; background: #111; color: #fff; font-size: .7rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; }
+    .ribbon.hot { background: var(--accent); color: #111; }
+    .product-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
+    .sku { font-size: .74rem; color: var(--muted); letter-spacing: .06em; }
+    .product h3 { font-size: 1.2rem; margin: 4px 0 6px; }
+    .product .desc { color: var(--muted); font-size: .9rem; margin-bottom: 14px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+    .chip { font-size: .74rem; padding: 4px 9px; border-radius: 999px; background: rgba(255,138,61,.12); color: #ffb689; }
+    .chip.grey { background: rgba(255,255,255,.06); color: #c3c9cf; }
+    .price-row { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .price { font-family: "Space Grotesk", "Inter", sans-serif; font-size: 1.45rem; font-weight: 700; }
+    .price small { display: block; font-size: .72rem; color: var(--muted); font-weight: 400; font-family: "Inter"; }
+    .price-actions { display: flex; gap: 8px; }
 
-    /* ============================================================
-       PRODUCTS
-       ============================================================ */
-    .product { display: flex; flex-direction: column; }
-    .product-img {
-      background: var(--bg-soft); border-radius: 10px; aspect-ratio: 4/3;
-      display: flex; align-items: center; justify-content: center; margin-bottom: 20px; padding: 24px;
-    }
-    .product .tag { font-size: .75rem; color: var(--accent); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
-    .product h3 { margin: 6px 0 8px; }
-    .product ul { list-style: none; color: var(--muted); font-size: .9rem; margin: 12px 0 20px; }
-    .product li { padding: 4px 0 4px 22px; position: relative; }
-    .product li::before { content: "✓"; position: absolute; left: 0; color: var(--ok); }
-    .price-row { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .price { font-family: "Space Grotesk"; font-size: 1.6rem; font-weight: 700; }
-    .price small { font-size: .8rem; color: var(--muted); font-weight: 400; font-family: "Inter"; }
+    /* ================= COMPARE ================= */
+    .table-wrap { overflow-x: auto; margin-top: 40px; border: 1px solid var(--line); border-radius: var(--radius); }
+    table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: .93rem; }
+    th, td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--line); }
+    thead th { background: var(--card); font-family: "Space Grotesk", "Inter", sans-serif; font-size: 1rem; }
+    tbody th { color: var(--muted); font-weight: 500; }
+    tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+    .yes { color: var(--ok); font-weight: 600; }
+    .no { color: #5c646d; }
 
-    /* ============================================================
-       BUSINESS
-       ============================================================ */
-    .business { background: linear-gradient(180deg, var(--bg-soft), var(--bg)); border-top: 1px solid var(--line); }
+    /* ================= BUSINESS ================= */
     .biz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .biz-photo { border-radius: var(--radius); overflow: hidden; margin-top: 32px; }
+    .biz-photo img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
     .biz-list { list-style: none; margin-top: 28px; display: grid; gap: 18px; }
     .biz-list li { display: flex; gap: 14px; }
     .biz-list strong { display: block; }
     .biz-list span { color: var(--muted); font-size: .95rem; }
     .dot { flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin-top: 8px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
 
     /* Forms */
     form { display: grid; gap: 14px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     label { font-size: .85rem; color: var(--muted); display: grid; gap: 6px; }
-    input, select, textarea {
-      width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--line);
-      background: var(--bg); color: var(--text); font: inherit; font-size: .95rem;
-    }
+    input, select, textarea { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--text); font: inherit; font-size: .95rem; }
     input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
-    textarea { min-height: 110px; resize: vertical; }
+    textarea { min-height: 100px; resize: vertical; }
     .consent { display: flex; gap: 10px; align-items: flex-start; font-size: .82rem; }
     .consent input { width: auto; margin-top: 4px; }
     .form-msg { font-size: .9rem; color: var(--ok); display: none; }
     .form-msg.show { display: block; }
 
-    /* ============================================================
-       FAQ
-       ============================================================ */
+    /* ================= FAQ ================= */
     .faq-list { margin-top: 40px; display: grid; gap: 12px; max-width: 820px; }
     details { background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 22px; }
     summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
@@ -179,37 +162,58 @@
     details[open] summary::after { content: "–"; }
     details p { color: var(--muted); margin-top: 12px; }
 
-    /* Pre-order */
     .preorder { text-align: center; }
     .preorder .card { max-width: 620px; margin: 40px auto 0; text-align: left; }
 
-    /* ============================================================
-       FOOTER
-       ============================================================ */
+    /* ================= PRODUCT POPUP ================= */
+    dialog { border: 0; padding: 0; background: transparent; max-width: 980px; width: calc(100% - 32px); margin: auto; color: var(--text); }
+    dialog::backdrop { background: rgba(0,0,0,.72); backdrop-filter: blur(3px); }
+    .modal { background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; display: grid; grid-template-columns: 1.05fr 1fr; position: relative; }
+    .modal-close { position: absolute; top: 12px; right: 12px; z-index: 2; width: 38px; height: 38px; border-radius: 50%; border: 0; background: rgba(0,0,0,.55); color: #fff; font-size: 1.3rem; cursor: pointer; }
+    .gallery-main { background: var(--photo-bg); aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; }
+    .gallery-main img { width: 100%; height: 100%; object-fit: contain; padding: 32px; mix-blend-mode: multiply; }
+    .gallery-main.fill img { object-fit: cover; padding: 0; mix-blend-mode: normal; }
+    .thumbs { display: flex; gap: 8px; padding: 12px; background: var(--bg-soft); overflow-x: auto; }
+    .thumbs button { flex: none; width: 64px; height: 64px; border-radius: 10px; overflow: hidden; border: 2px solid transparent; padding: 0; cursor: pointer; background: var(--photo-bg); }
+    .thumbs button.active { border-color: var(--accent); }
+    .thumbs img { width: 100%; height: 100%; object-fit: cover; }
+    .modal-info { padding: 32px; max-height: 86vh; overflow-y: auto; }
+    .modal-info h3 { font-size: 1.7rem; margin: 4px 0 10px; }
+    .modal-info .desc { color: var(--muted); margin-bottom: 18px; }
+    .modal-info ul.points { list-style: none; margin-bottom: 22px; display: grid; gap: 8px; font-size: .93rem; }
+    .modal-info ul.points li { padding-left: 24px; position: relative; }
+    .modal-info ul.points li::before { content: "✓"; position: absolute; left: 0; color: var(--ok); }
+    .specs { width: 100%; min-width: 0; font-size: .88rem; margin-bottom: 24px; }
+    .specs th, .specs td { padding: 9px 0; }
+    .specs th { color: var(--muted); font-weight: 500; width: 40%; }
+
+    /* ================= FOOTER ================= */
     footer { border-top: 1px solid var(--line); padding: 48px 0; color: var(--muted); font-size: .9rem; }
     .footer-grid { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
     .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
     .footer-links a:hover { color: var(--text); }
 
-    /* ============================================================
-       MOBILE
-       ============================================================ */
-    @media (max-width: 900px) {
-      .hero-grid, .biz-grid { grid-template-columns: 1fr; }
-      .grid-3, .steps { grid-template-columns: 1fr; }
-      .hero-visual { max-width: 420px; margin: 0 auto; }
-      .nav-links {
-        display: none; position: absolute; top: 68px; left: 0; right: 0;
-        flex-direction: column; gap: 0; background: var(--bg); border-bottom: 1px solid var(--line);
-      }
+    /* ================= MOBILE ================= */
+    @media (max-width: 980px) {
+      .protect-grid { grid-template-columns: repeat(2, 1fr); }
+      .products { grid-template-columns: repeat(2, 1fr); }
+      .biz-grid, .modal { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .nav-links { display: none; position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--bg); border-bottom: 1px solid var(--line); }
       .nav-links.open { display: flex; }
       .nav-links a { padding: 16px 20px; border-top: 1px solid var(--line); }
       .menu-toggle { display: block; }
       .nav .btn { display: none; }
       section { padding: 72px 0; }
+      .hero { min-height: 560px; }
+      .hero-img { background-position: 70% center; }
+      .hero-img::after { background: linear-gradient(180deg, rgba(14,15,17,.55) 0%, rgba(14,15,17,.95) 70%); }
     }
     @media (max-width: 560px) {
+      .protect-grid, .products { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
+      .modal-info { padding: 24px; }
     }
   </style>
 </head>
@@ -220,12 +224,13 @@
     <div class="container nav">
       <a href="#" class="logo">VAUL<span>TA</span></a>
       <nav class="nav-links" id="navLinks">
-        <a href="#features">Features</a>
-        <a href="#models">Models</a>
+        <a href="#protection">Protection</a>
+        <a href="#shop">Shop</a>
+        <a href="#compare">Compare</a>
         <a href="#business">For Business</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a href="#preorder" class="btn btn-primary">Pre-order</a>
+      <a href="#preorder" class="btn btn-primary btn-sm">Pre-order</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
     </div>
   </header>
@@ -233,207 +238,134 @@
   <main>
     <!-- ================= HERO ================= -->
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Anti-theft laptop bags</p>
-          <h1>Your laptop.<br/><em>Locked.</em> Uncuttable.</h1>
-          <p class="lead">
-            A bag that can't be slashed, doesn't let water in, and only opens with your fingerprint.
-            Built for commuters, travellers and teams who carry valuable work on the move.
-          </p>
-          <div class="hero-ctas">
-            <a href="#models" class="btn btn-primary">See the models</a>
-            <a href="#business" class="btn btn-ghost">Equip your team →</a>
-          </div>
-          <div class="badges">
-            <span class="badge"><b>Cut-resistant</b> fabric</span>
-            <span class="badge"><b>Waterproof</b> shell</span>
-            <span class="badge"><b>Fingerprint</b> lock</span>
-            <span class="badge"><b>EU</b> shipping</span>
-          </div>
+      <div class="hero-img" role="img" aria-label="Man wearing an anti-theft backpack"></div>
+      <div class="container">
+        <p class="eyebrow">Anti-theft bags</p>
+        <h1>Opens with your <em>fingerprint.</em><br/>Resists the blade.</h1>
+        <p class="lead">
+          Backpacks and crossbody bags with fingerprint locks, cut-resistant fabric and built-in tracking,
+          made for commuters, travellers and teams who carry valuable work every day.
+        </p>
+        <div class="hero-ctas">
+          <a href="#shop" class="btn btn-primary">Shop the collection</a>
+          <a href="#business" class="btn btn-ghost">Equip your team →</a>
         </div>
-
-        <!-- Bag illustration (replace with a real product photo later) -->
-        <div class="hero-visual">
-          <svg viewBox="0 0 300 300" width="100%" aria-label="Illustration of a VAULTA bag">
-            <rect x="60" y="70" width="180" height="200" rx="28" fill="#23272c" stroke="#3a4048" stroke-width="2"/>
-            <path d="M110 70 V52 a20 20 0 0 1 20 -20 h40 a20 20 0 0 1 20 20 V70" fill="none" stroke="#3a4048" stroke-width="8" stroke-linecap="round"/>
-            <rect x="80" y="110" width="140" height="10" rx="5" fill="#2e333a"/>
-            <rect x="80" y="230" width="140" height="10" rx="5" fill="#2e333a"/>
-            <!-- fingerprint lock -->
-            <circle cx="150" cy="170" r="32" fill="#16191c" stroke="#ff8a3d" stroke-width="2.5"/>
-            <g fill="none" stroke="#ff8a3d" stroke-width="2" stroke-linecap="round">
-              <path d="M138 182 q0 -24 12 -24 q12 0 12 24"/>
-              <path d="M132 178 q0 -28 18 -28 q18 0 18 28"/>
-              <path d="M144 184 q0 -16 6 -16 q6 0 6 16"/>
-            </g>
-          </svg>
+        <div class="badges">
+          <span class="badge"><b>Fingerprint</b> lock</span>
+          <span class="badge"><b>Cut-resistant</b> fabric</span>
+          <span class="badge"><b>Apple Find My</b> compatible</span>
+          <span class="badge"><b>RFID</b> card protection</span>
+          <span class="badge"><b>Water-resistant</b></span>
         </div>
       </div>
     </section>
 
-    <!-- ================= FEATURES ================= -->
-    <section class="features" id="features">
+    <!-- ================= PROTECTION ================= -->
+    <section class="soft" id="protection">
       <div class="container">
-        <p class="eyebrow">Why VAULTA</p>
-        <h2 class="section-title">Protection you don't have to think about</h2>
-        <p class="section-lead">Every bag combines three layers of protection, so your laptop, documents and personal items stay safe in a crowded train, at a café or in the rain.</p>
+        <p class="eyebrow">Layers of protection</p>
+        <h2 class="section-title">Designed against the way bags get stolen</h2>
+        <p class="section-lead">Pickpockets open zips, thieves slash fabric, and lost bags are hard to find. Each model combines several of these defences.</p>
 
-        <div class="grid-3">
-          <div class="card">
-            <div class="icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>
+        <div class="protect-grid">
+          <article class="protect">
+            <img src="images/leather-lock.jpg" alt="Fingerprint lock on a zip puller" loading="lazy" />
+            <div>
+              <h3>Fingerprint lock</h3>
+              <p>The zip pullers lock into a biometric sensor. Only a registered fingerprint opens it: no code to forget, no key to lose.</p>
             </div>
-            <h3>Cut-resistant body</h3>
-            <p>A reinforced fabric layer woven into the shell resists knives and blades, so the bag can't be slashed open from behind.</p>
-          </div>
-          <div class="card">
-            <div class="icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2s7 8 7 13a7 7 0 0 1-14 0c0-5 7-13 7-13z"/></svg>
+          </article>
+          <article class="protect">
+            <img src="images/securetrack-cut.jpg" alt="Blade unable to cut the bag fabric" loading="lazy" />
+            <div>
+              <h3>Cut-resistant fabric</h3>
+              <p>A slash-resistant layer stops "cut and grab" thefts from behind, in crowded trains or at a café table.</p>
             </div>
-            <h3>Waterproof shell</h3>
-            <p>Sealed seams and water-repellent zips keep rain, spilled coffee and puddles away from your electronics.</p>
-          </div>
-          <div class="card">
-            <div class="icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 20c0-6 1.5-10 4-10s4 4 4 10"/><path d="M5 17c0-8 3-13 7-13s7 5 7 13"/><path d="M11 20c0-4 .5-6 1-6s1 2 1 6"/></svg>
+          </article>
+          <article class="protect">
+            <img src="images/metrosecure-findmy.jpg" alt="Tracking pocket on a backpack" loading="lazy" />
+            <div>
+              <h3>Tracking built in</h3>
+              <p>Selected models work with Apple Find My or carry a positioning module, so you can locate the bag if it goes missing.</p>
             </div>
-            <h3>Fingerprint lock</h3>
-            <p>The main compartment opens only with a registered fingerprint. No codes to forget, no keys to lose.</p>
-          </div>
-          <div class="card">
-            <div class="icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg>
+          </article>
+          <article class="protect">
+            <img src="images/shield-rfid.jpg" alt="Bank cards in an RFID-blocking pocket" loading="lazy" />
+            <div>
+              <h3>RFID-blocking pocket</h3>
+              <p>A shielded pocket protects contactless bank cards from unauthorised scanning.</p>
             </div>
-            <h3>Padded laptop bay</h3>
-            <p>A suspended, padded sleeve protects laptops up to 16" from drops and bumps.</p>
-          </div>
-          <div class="card">
-            <div class="icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
-            </div>
-            <h3>USB-C rechargeable</h3>
-            <p>The lock charges over USB-C and runs for weeks on a single charge, with an emergency backup option.</p>
-          </div>
-          <div class="card">
-            <div class="icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/><path d="M15 15c3 0 6 1.5 6 4"/></svg>
-            </div>
-            <h3>Multiple users</h3>
-            <p>Register several fingerprints, ideal for shared devices or a partner who needs access too.</p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ================= HOW IT WORKS ================= -->
-    <section>
+    <!-- ================= SHOP ================= -->
+    <section id="shop">
       <div class="container">
-        <p class="eyebrow">How it works</p>
-        <h2 class="section-title">Set up in under a minute</h2>
-        <div class="steps">
-          <div class="step">
-            <h3>Register your fingerprint</h3>
-            <p>Hold the setup button and press your finger on the sensor a few times. Done.</p>
+        <div class="shop-head">
+          <div>
+            <p class="eyebrow">The collection</p>
+            <h2 class="section-title">Choose your protection</h2>
+            <p class="section-lead">Tap any bag for photos, full specs and colours.</p>
           </div>
-          <div class="step">
-            <h3>Pack and close</h3>
-            <p>Zip the main compartment shut. The lock engages automatically.</p>
-          </div>
-          <div class="step">
-            <h3>Touch to open</h3>
-            <p>One touch of a registered finger unlocks it. Anyone else stays locked out.</p>
+          <div class="filters" id="filters">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="fingerprint">Fingerprint lock</button>
+            <button class="filter" data-filter="backpack">Backpacks</button>
+            <button class="filter" data-filter="small">Crossbody & clutch</button>
+            <button class="filter" data-filter="business">Business</button>
           </div>
         </div>
+
+        <!-- Product cards are created from the PRODUCTS list in the script at the bottom -->
+        <div class="products" id="productGrid"></div>
       </div>
     </section>
 
-    <!-- ================= MODELS / PRODUCTS ================= -->
-    <section id="models" class="features">
+    <!-- ================= COMPARE ================= -->
+    <section class="soft" id="compare">
       <div class="container">
-        <p class="eyebrow">The collection</p>
-        <h2 class="section-title">Pick your VAULTA</h2>
-        <p class="section-lead">All models include the cut-resistant shell, waterproof finish and fingerprint lock.</p>
-
-        <div class="grid-3">
-          <!-- Product 1 -->
-          <article class="card product">
-            <div class="product-img">
-              <svg viewBox="0 0 200 140" width="80%"><rect x="20" y="25" width="160" height="100" rx="14" fill="#2a2f35"/><circle cx="160" cy="75" r="11" fill="#16191c" stroke="#ff8a3d" stroke-width="2"/></svg>
-            </div>
-            <span class="tag">Slim</span>
-            <h3>VAULTA Sleeve</h3>
-            <p class="section-lead" style="font-size:.95rem">A slim protective sleeve that slips into any bag or carries on its own.</p>
-            <ul>
-              <li>Fits laptops up to 14"</li>
-              <li>Front document pocket</li>
-              <li>Weight: approx. 0.6 kg</li>
-            </ul>
-            <div class="price-row">
-              <div class="price">€129 <small>incl. VAT</small></div>
-              <button class="btn btn-primary" data-product="VAULTA Sleeve">Pre-order</button>
-            </div>
-          </article>
-
-          <!-- Product 2 -->
-          <article class="card product">
-            <div class="product-img">
-              <svg viewBox="0 0 200 140" width="60%"><rect x="55" y="20" width="90" height="115" rx="18" fill="#2a2f35"/><path d="M80 20 V12 a8 8 0 0 1 8 -8 h24 a8 8 0 0 1 8 8 V20" fill="none" stroke="#3a4048" stroke-width="5"/><circle cx="100" cy="75" r="11" fill="#16191c" stroke="#ff8a3d" stroke-width="2"/></svg>
-            </div>
-            <span class="tag">Bestseller</span>
-            <h3>VAULTA Backpack</h3>
-            <p class="section-lead" style="font-size:.95rem">The everyday commuter backpack with room for your laptop and the rest of your day.</p>
-            <ul>
-              <li>Fits laptops up to 16"</li>
-              <li>20 L capacity</li>
-              <li>Hidden passport pocket</li>
-            </ul>
-            <div class="price-row">
-              <div class="price">€189 <small>incl. VAT</small></div>
-              <button class="btn btn-primary" data-product="VAULTA Backpack">Pre-order</button>
-            </div>
-          </article>
-
-          <!-- Product 3 -->
-          <article class="card product">
-            <div class="product-img">
-              <svg viewBox="0 0 200 140" width="80%"><rect x="25" y="40" width="150" height="85" rx="12" fill="#2a2f35"/><path d="M45 40 L100 10 L155 40" fill="none" stroke="#3a4048" stroke-width="4"/><circle cx="100" cy="82" r="11" fill="#16191c" stroke="#ff8a3d" stroke-width="2"/></svg>
-            </div>
-            <span class="tag">Business</span>
-            <h3>VAULTA Messenger</h3>
-            <p class="section-lead" style="font-size:.95rem">A clean shoulder bag that looks right in a meeting and on a business trip.</p>
-            <ul>
-              <li>Fits laptops up to 15"</li>
-              <li>Trolley strap for suitcases</li>
-              <li>Organiser for cables & cards</li>
-            </ul>
-            <div class="price-row">
-              <div class="price">€169 <small>incl. VAT</small></div>
-              <button class="btn btn-primary" data-product="VAULTA Messenger">Pre-order</button>
-            </div>
-          </article>
+        <p class="eyebrow">Compare</p>
+        <h2 class="section-title">Which security backpack is right for you?</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th></th><th>MetroSecure Pro</th><th>SecureTrack Pack</th><th>Stealth Pack</th></tr>
+            </thead>
+            <tbody>
+              <tr><th>Lock</th><td class="yes">Fingerprint</td><td>TSA combination</td><td>TSA combination</td></tr>
+              <tr><th>Cut-resistant fabric</th><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">—</td></tr>
+              <tr><th>Tracking</th><td class="yes">Apple Find My</td><td class="yes">Positioning module</td><td class="no">—</td></tr>
+              <tr><th>Burst-resistant zips</th><td class="yes">Double-layer</td><td class="yes">Double-layer</td><td>Concealed zipper</td></tr>
+              <tr><th>Volume</th><td>18 L</td><td>24 L</td><td>24 L</td></tr>
+              <tr><th>Weight</th><td>1.28 kg</td><td>1.21 kg</td><td>1.0 kg</td></tr>
+              <tr><th>Best for</th><td>Business commuting</td><td>Travel & daily carry</td><td>Lightweight everyday use</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
     <!-- ================= BUSINESS ================= -->
-    <section class="business" id="business">
+    <section id="business">
       <div class="container biz-grid">
         <div>
           <p class="eyebrow">For companies</p>
           <h2 class="section-title">Protect company laptops and the data on them</h2>
-          <p class="section-lead">A stolen laptop costs far more than the hardware: downtime, data exposure and reporting duties. Equip your employees with bags that make theft much harder.</p>
+          <p class="section-lead">A stolen laptop costs far more than the hardware: downtime, exposed client data and GDPR reporting duties. Give your employees bags that make theft much harder.</p>
           <ul class="biz-list">
-            <li><div class="dot"></div><div><strong>Volume pricing</strong><span>Tiered discounts from 10 bags upward.</span></div></li>
-            <li><div class="dot"></div><div><strong>Your logo on the bag</strong><span>Discreet custom branding for your team.</span></div></li>
-            <li><div class="dot"></div><div><strong>Invoice & VAT-ready</strong><span>Pay by invoice with reverse-charge VAT for EU businesses.</span></div></li>
-            <li><div class="dot"></div><div><strong>A dedicated contact</strong><span>One person handles your order, delivery and support.</span></div></li>
+            <li><div class="dot"></div><div><strong>Volume pricing</strong><span>Tiered discounts for team orders.</span></div></li>
+            <li><div class="dot"></div><div><strong>Custom branding</strong><span>Ask us about your logo on larger orders.</span></div></li>
+            <li><div class="dot"></div><div><strong>Invoice & EU VAT</strong><span>Pay by invoice, with reverse-charge VAT for EU businesses.</span></div></li>
+            <li><div class="dot"></div><div><strong>One contact</strong><span>A single person handles your order, delivery and support.</span></div></li>
           </ul>
+          <div class="biz-photo"><img src="images/commuter-lifestyle.jpg" alt="Business traveller with a backpack and suitcase" loading="lazy" /></div>
         </div>
 
         <div class="card">
           <h3 style="margin-bottom:6px">Request a business quote</h3>
-          <p style="color:var(--muted);font-size:.9rem;margin-bottom:20px">We'll reply within one business day.</p>
+          <p style="color:var(--muted);font-size:.9rem;margin-bottom:20px">We reply within one business day.</p>
           <!-- Replace YOUR_FORM_ID with your Formspree ID (see README) -->
           <form class="js-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <input type="hidden" name="form" value="Business quote" />
@@ -445,14 +377,14 @@
               <label>Work email<input type="email" name="email" required /></label>
               <label>Country<input name="country" /></label>
             </div>
-            <label>How many bags?
-              <select name="quantity">
-                <option>10–49</option>
-                <option>50–199</option>
-                <option>200–999</option>
-                <option>1000+</option>
-              </select>
-            </label>
+            <div class="form-row">
+              <label>Model<select name="product" class="product-select"></select></label>
+              <label>How many?
+                <select name="quantity">
+                  <option>10–49</option><option>50–199</option><option>200–999</option><option>1000+</option>
+                </select>
+              </label>
+            </div>
             <label>Message (optional)<textarea name="message"></textarea></label>
             <label class="consent"><input type="checkbox" required /> I agree that my details are used to answer my request, as described in the Privacy Policy.</label>
             <button class="btn btn-primary" type="submit">Send request</button>
@@ -463,37 +395,41 @@
     </section>
 
     <!-- ================= FAQ ================= -->
-    <section id="faq">
+    <section class="soft" id="faq">
       <div class="container">
         <p class="eyebrow">FAQ</p>
         <h2 class="section-title">Questions, answered</h2>
         <div class="faq-list">
           <details>
-            <summary>What happens if the battery runs out?</summary>
-            <p>You'll get a low-battery warning days before. If it does run empty, you can power the lock from any USB-C power bank to open it.</p>
+            <summary>Which bags have a fingerprint lock?</summary>
+            <p>The MetroSecure Pro backpack, the Shield Crossbody, the Bio Clutch, the Bio Crossbody and the Heritage Crossbody. Use the "Fingerprint lock" filter in the shop to see them.</p>
           </details>
           <details>
-            <summary>How many fingerprints can I register?</summary>
-            <p>Up to 10 fingerprints, so you can add several fingers or trusted people.</p>
+            <summary>Are the bags waterproof?</summary>
+            <p>They are water-resistant: the fabric repels rain and splashes, so your laptop stays dry on the way to work. They are not designed to be submerged in water.</p>
           </details>
           <details>
-            <summary>Is it allowed as cabin baggage on flights?</summary>
-            <p>Yes. All models fit standard cabin size limits, and the lock battery is within airline rules for carry-on items.</p>
+            <summary>Can I track my bag if it is lost or stolen?</summary>
+            <p>The MetroSecure Pro has a dedicated pocket for Apple Find My tracking, and the SecureTrack Pack has a built-in positioning feature.</p>
+          </details>
+          <details>
+            <summary>Will my laptop fit?</summary>
+            <p>Every product page lists the dimensions. The Stealth Pack and our business backpacks fit 15.6" laptops, and the business handbag fits a 16" MacBook Pro.</p>
           </details>
           <details>
             <summary>Do you ship across Europe?</summary>
-            <p>Yes, we ship to all EU countries, plus the UK, Switzerland and Norway.</p>
+            <p>Yes, we ship to all EU countries.</p>
           </details>
           <details>
-            <summary>Can I return it?</summary>
-            <p>Yes. You have 14 days after delivery to return your bag, no reason needed.</p>
+            <summary>Can I return my bag?</summary>
+            <p>Yes. You have 14 days after delivery to return it, no reason needed.</p>
           </details>
         </div>
       </div>
     </section>
 
     <!-- ================= PRE-ORDER ================= -->
-    <section class="preorder features" id="preorder">
+    <section class="preorder" id="preorder">
       <div class="container">
         <p class="eyebrow">Launching soon</p>
         <h2 class="section-title">Reserve yours before launch</h2>
@@ -506,21 +442,27 @@
               <label>Name<input name="name" required /></label>
               <label>Email<input type="email" name="email" required /></label>
             </div>
-            <label>Model
-              <select name="product" id="productSelect">
-                <option>VAULTA Sleeve</option>
-                <option selected>VAULTA Backpack</option>
-                <option>VAULTA Messenger</option>
-              </select>
-            </label>
+            <label>Model<select name="product" class="product-select" id="preorderSelect"></select></label>
             <label class="consent"><input type="checkbox" required /> I agree to receive emails about the launch. I can unsubscribe at any time.</label>
             <button class="btn btn-primary" type="submit">Reserve my bag</button>
-            <p class="form-msg">You're on the list! Check your inbox for a confirmation.</p>
+            <p class="form-msg">You're on the list! We'll email you at launch.</p>
           </form>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- ================= PRODUCT POPUP ================= -->
+  <dialog id="productDialog">
+    <div class="modal">
+      <button class="modal-close" id="closeDialog" aria-label="Close">×</button>
+      <div>
+        <div class="gallery-main" id="galleryMain"><img id="galleryImg" alt="" /></div>
+        <div class="thumbs" id="thumbs"></div>
+      </div>
+      <div class="modal-info" id="modalInfo"></div>
+    </div>
+  </dialog>
 
   <!-- ================= FOOTER ================= -->
   <footer>
@@ -541,51 +483,305 @@
   </footer>
 
   <script>
-    // Current year in the footer
-    document.getElementById("year").textContent = new Date().getFullYear();
+    /* ============================================================
+       PRODUCTS — edit names, prices and details here.
+       Specs come from the supplier catalog (Kingsons, Autumn/Winter 2026).
+       ⚠️ PRICES ARE PLACEHOLDERS: set your own before going live.
+       category: "backpack" | "small" | "business"
+       fill: true  → photo has its own dark background (shown edge to edge)
+       ============================================================ */
+    const PRODUCTS = [
+      {
+        id: "metrosecure-pro", sku: "K25834", name: "MetroSecure Pro", category: "backpack",
+        ribbon: "Flagship", hot: true, price: 179, fill: true,
+        image: "images/metrosecure.jpg",
+        gallery: ["images/metrosecure.jpg", "images/metrosecure-fingerprint.jpg", "images/metrosecure-findmy.jpg", "images/metrosecure-cut.jpg"],
+        desc: "Smart anti-theft backpack with fingerprint lock and Apple Find My compatibility, designed for business commuters.",
+        chips: ["Fingerprint lock", "Cut-resistant", "Find My"],
+        points: [
+          "Fingerprint lock on the main compartment",
+          "Dedicated pocket for Apple Find My tracking",
+          "Cut-resistant fabric with double-layer anti-burst zippers",
+          "Well-organised interior compartments"
+        ],
+        specs: { Dimensions: "45 × 30 × 15 cm", Weight: "1.28 kg", Volume: "18 L", Materials: "Cut-resistant fabric + microfiber leather", Colours: "Black" }
+      },
+      {
+        id: "securetrack", sku: "K261206", name: "SecureTrack Pack", category: "backpack",
+        ribbon: "Patented", price: 159,
+        image: "images/securetrack.jpg",
+        gallery: ["images/securetrack.jpg", "images/securetrack-cut.jpg"],
+        desc: "Real-time location tracking, cut-resistant protection, TSA-ready locking and a reinforced zip system.",
+        chips: ["Cut-resistant", "Tracking", "TSA lock"],
+        points: [
+          "Built-in positioning to locate the bag if lost",
+          "Cut-resistant material deters slash theft",
+          "TSA combination lock: airport checks without breaking it",
+          "Double-layer, burst-resistant zipper"
+        ],
+        specs: { Dimensions: "46.5 × 30 × 18.5 cm", Weight: "1.21 kg", Volume: "24 L", Materials: "Cut-resistant material + microfiber leather", Colours: "Grey" }
+      },
+      {
+        id: "stealth", sku: "K261165", name: "Stealth Pack", category: "backpack",
+        price: 129,
+        image: "images/stealth.jpg",
+        gallery: ["images/stealth.jpg", "images/stealth-lifestyle.jpg", "images/stealth-water.jpg"],
+        desc: "Hidden protection, complete peace of mind. A sleek shell with concealed zips and a TSA lock.",
+        chips: ["TSA lock", "Concealed zip", "15.6\" laptop"],
+        points: [
+          "Concealed zipper and TSA combination lock",
+          "Lightweight, water-resistant fabric with microfiber leather accents",
+          "Fits a 15.6\" laptop and a 12.9\" tablet",
+          "Breathable, ergonomic back support for all-day comfort"
+        ],
+        specs: { Dimensions: "46.5 × 30 × 18.5 cm", Weight: "1.0 kg", Volume: "24 L", Materials: "Polyester + microfiber leather", Colours: "Black, Grey" }
+      },
+      {
+        id: "shield-crossbody", sku: "K260673", name: "Shield Crossbody", category: "small",
+        ribbon: "RFID", price: 89,
+        image: "images/shield.jpg",
+        gallery: ["images/shield.jpg", "images/shield-lock.jpg", "images/shield-rfid.jpg"],
+        desc: "Compact crossbody with fingerprint lock, slash-resistant fabric and an RFID-blocking card pocket.",
+        chips: ["Fingerprint lock", "Cut-resistant", "RFID"],
+        points: [
+          "Fingerprint lock protects your belongings",
+          "Slash-resistant fabric and microfiber material",
+          "Durable metal zippers",
+          "RFID-blocking pocket for bank cards",
+          "Removable strap: hand, shoulder or crossbody carry"
+        ],
+        specs: { Dimensions: "11 × 18 × 7.5 cm", Weight: "0.40 kg", Volume: "1 L", Materials: "Cut-resistant fabric + microfiber leather", Colours: "Black" }
+      },
+      {
+        id: "bio-crossbody", sku: "K260676", name: "Bio Crossbody", category: "small",
+        price: 89,
+        image: "images/crossbody.jpg",
+        gallery: ["images/crossbody.jpg", "images/crossbody-lifestyle.jpg"],
+        desc: "Slim crossbody with a biometric fingerprint lock and cut-resistant fabric. Phone, cards and keys, locked.",
+        chips: ["Fingerprint lock", "Cut-resistant", "Water-resistant"],
+        points: [
+          "Biometric fingerprint lock",
+          "Cut-resistant fabric + microfiber leather",
+          "Water-resistant, quick-access design"
+        ],
+        specs: { Dimensions: "11.5 × 21 × 6 cm", Weight: "0.39 kg", Volume: "1 L", Materials: "Cut-resistant fabric + microfiber leather", Colours: "Black" }
+      },
+      {
+        id: "bio-clutch", sku: "K251366", name: "MetroSecure Bio Clutch", category: "small",
+        price: 69,
+        image: "images/clutch.jpg",
+        gallery: ["images/clutch.jpg", "images/clutch-lock.jpg"],
+        desc: "A light everyday pouch for phone, wallet and cables, secured with a fingerprint lock.",
+        chips: ["Fingerprint lock", "Water-resistant", "0.2 kg"],
+        points: [
+          "Biometric fingerprint lock",
+          "Water-resistant 400D polyester",
+          "Wrist strap for easy carry"
+        ],
+        specs: { Dimensions: "12.5 × 23 × 6.5 cm", Weight: "0.20 kg", Volume: "1 L", Materials: "400D polyester + microfiber leather", Colours: "Black, Grey, Blue, Green" }
+      },
+      {
+        id: "heritage-crossbody", sku: "K260930", name: "Heritage Crossbody", category: "small",
+        price: 95,
+        image: "images/leather.jpg",
+        gallery: ["images/leather.jpg", "images/leather-lock.jpg", "images/leather-lifestyle.jpg"],
+        desc: "A refined leather-look crossbody with a fingerprint lock, secure for daily travel.",
+        chips: ["Fingerprint lock", "Water-resistant"],
+        points: [
+          "Fingerprint lock on the zip",
+          "Hydrolysis-resistant PU: keeps its look for years",
+          "Adjustable crossbody strap and wrist strap"
+        ],
+        specs: { Dimensions: "11 × 18 × 7.5 cm", Weight: "0.42 kg", Volume: "1 L", Materials: "Hydrolysis-resistant PU", Colours: "Black, Grey, Red, Brown" }
+      },
+      {
+        id: "commuter-flap", sku: "K260697", name: "Executive Flap Backpack", category: "business",
+        price: 109,
+        image: "images/commuter.jpg",
+        gallery: ["images/commuter.jpg", "images/commuter-lifestyle.jpg"],
+        desc: "Minimalist business backpack with a clean, professional look for the office and travel.",
+        chips: ["15.6\" laptop", "Water-resistant"],
+        points: [
+          "1000D abrasion-resistant fabric with microfiber leather accents",
+          "Wide opening for easy access and organisation",
+          "Fits up to a 15.6\" laptop"
+        ],
+        specs: { Dimensions: "42.5 × 32 × 12 cm", Weight: "0.80 kg", Volume: "16 L", Materials: "1000D polyester + microfiber leather", Colours: "Black, Grey" }
+      },
+      {
+        id: "business-backpack", sku: "K261048", name: "Business Backpack", category: "business",
+        price: 99,
+        image: "images/biz-k261048.jpg",
+        gallery: ["images/biz-k261048.jpg", "images/biz-lifestyle.jpg"],
+        desc: "Everyday work backpack with quick-access pockets and a luggage strap for business trips.",
+        chips: ["15.6\" laptop", "Luggage strap"],
+        points: [
+          "Quick-access pockets",
+          "Water-resistant 1000D polyester",
+          "Fits up to a 15.6\" laptop"
+        ],
+        specs: { Dimensions: "45 × 32 × 18 cm", Weight: "0.77 kg", Volume: "20 L", Materials: "1000D polyester + leather", Colours: "Black, Grey" }
+      },
+      {
+        id: "business-backpack-plus", sku: "K260956", name: "Business Backpack Plus", category: "business",
+        price: 109,
+        image: "images/biz-k260956.jpg",
+        gallery: ["images/biz-k260956.jpg"],
+        desc: "A roomier work backpack with a front organiser pocket for chargers, cables and documents.",
+        chips: ["15.6\" laptop", "21.5 L"],
+        points: [
+          "Front organiser compartment",
+          "Water-resistant 1000D polyester",
+          "Fits up to a 15.6\" laptop"
+        ],
+        specs: { Dimensions: "45 × 30 × 20 cm", Weight: "0.85 kg", Volume: "21.5 L", Materials: "1000D polyester + leather", Colours: "Black, Grey" }
+      },
+      {
+        id: "business-handbag", sku: "K25784", name: "Business Handbag", category: "business",
+        price: 95,
+        image: "images/handbag.jpg",
+        gallery: ["images/handbag.jpg"],
+        desc: "Minimalist laptop handbag for work and daily commuting.",
+        chips: ["16\" MacBook Pro", "0.65 kg"],
+        points: [
+          "High-density 1000D abrasion-resistant polyester",
+          "Microfiber leather handles for a comfortable grip",
+          "Fits a 16\" MacBook Pro"
+        ],
+        specs: { Dimensions: "28.5 × 40 × 10 cm", Weight: "0.65 kg", Volume: "10.5 L", Materials: "1000D polyester + microfiber leather", Colours: "Black, Grey" }
+      }
+    ];
 
-    // Mobile menu
+    /* ================= Build the shop ================= */
+    const grid = document.getElementById("productGrid");
+    const euro = n => "€" + n.toLocaleString("de-DE");
+
+    function cardHTML(p) {
+      const hasFingerprint = p.chips.includes("Fingerprint lock");
+      return `
+        <article class="product" data-category="${p.category}" data-fingerprint="${hasFingerprint}">
+          <div class="product-photo ${p.fill ? "fill" : ""}" data-open="${p.id}">
+            ${p.ribbon ? `<span class="ribbon ${p.hot ? "hot" : ""}">${p.ribbon}</span>` : ""}
+            <img src="${p.image}" alt="${p.name}" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <span class="sku">${p.sku}</span>
+            <h3>${p.name}</h3>
+            <p class="desc">${p.desc}</p>
+            <div class="chips">${p.chips.map((c, i) => `<span class="chip ${i > 1 ? "grey" : ""}">${c}</span>`).join("")}</div>
+            <div class="price-row">
+              <div class="price">${euro(p.price)}<small>incl. VAT</small></div>
+              <div class="price-actions">
+                <button class="btn btn-ghost btn-sm" data-open="${p.id}">Details</button>
+                <button class="btn btn-primary btn-sm" data-preorder="${p.id}">Pre-order</button>
+              </div>
+            </div>
+          </div>
+        </article>`;
+    }
+    grid.innerHTML = PRODUCTS.map(cardHTML).join("");
+
+    // Fill the "Model" dropdowns in both forms
+    document.querySelectorAll(".product-select").forEach(sel => {
+      sel.innerHTML = PRODUCTS.map(p => `<option value="${p.name}">${p.name} (${p.sku})</option>`).join("");
+    });
+
+    /* ================= Filters ================= */
+    document.querySelectorAll(".filter").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const f = btn.dataset.filter;
+        grid.querySelectorAll(".product").forEach(card => {
+          const show = f === "all"
+            || (f === "fingerprint" && card.dataset.fingerprint === "true")
+            || card.dataset.category === f;
+          card.style.display = show ? "" : "none";
+        });
+      });
+    });
+
+    /* ================= Product popup ================= */
+    const dialog = document.getElementById("productDialog");
+    const galleryMain = document.getElementById("galleryMain");
+    const galleryImg = document.getElementById("galleryImg");
+    const thumbs = document.getElementById("thumbs");
+    const info = document.getElementById("modalInfo");
+
+    function showImage(src, p) {
+      galleryImg.src = src;
+      galleryImg.alt = p.name;
+      // product shots on white use "contain"; lifestyle/detail photos fill the frame
+      galleryMain.classList.toggle("fill", src !== p.image || !!p.fill);
+      thumbs.querySelectorAll("button").forEach(b => b.classList.toggle("active", b.dataset.src === src));
+    }
+
+    function openProduct(id) {
+      const p = PRODUCTS.find(x => x.id === id);
+      if (!p) return;
+      thumbs.innerHTML = p.gallery.map(src => `<button data-src="${src}"><img src="${src}" alt="" /></button>`).join("");
+      thumbs.querySelectorAll("button").forEach(b => b.addEventListener("click", () => showImage(b.dataset.src, p)));
+      thumbs.style.display = p.gallery.length > 1 ? "" : "none";
+      showImage(p.image, p);
+      info.innerHTML = `
+        <span class="sku">${p.sku}</span>
+        <h3>${p.name}</h3>
+        <p class="desc">${p.desc}</p>
+        <ul class="points">${p.points.map(x => `<li>${x}</li>`).join("")}</ul>
+        <table class="specs"><tbody>
+          ${Object.entries(p.specs).map(([k, v]) => `<tr><th>${k}</th><td>${v}</td></tr>`).join("")}
+        </tbody></table>
+        <div class="price-row">
+          <div class="price">${euro(p.price)}<small>incl. VAT</small></div>
+          <button class="btn btn-primary" data-preorder="${p.id}">Pre-order</button>
+        </div>`;
+      dialog.showModal();
+    }
+
+    document.getElementById("closeDialog").addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", e => { if (e.target === dialog) dialog.close(); });
+
+    // One click handler for all "Details" and "Pre-order" buttons
+    document.addEventListener("click", e => {
+      const open = e.target.closest("[data-open]");
+      if (open) { openProduct(open.dataset.open); return; }
+      const pre = e.target.closest("[data-preorder]");
+      if (pre) {
+        const p = PRODUCTS.find(x => x.id === pre.dataset.preorder);
+        document.getElementById("preorderSelect").value = p.name;
+        if (dialog.open) dialog.close();
+        document.getElementById("preorder").scrollIntoView({ behavior: "smooth" });
+      }
+    });
+
+    /* ================= Small things ================= */
+    document.getElementById("year").textContent = new Date().getFullYear();
     const toggle = document.getElementById("menuToggle");
     const links = document.getElementById("navLinks");
     toggle.addEventListener("click", () => links.classList.toggle("open"));
     links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => links.classList.remove("open")));
 
-    // "Pre-order" buttons on product cards: jump to the form and pick that model
-    document.querySelectorAll("[data-product]").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.getElementById("productSelect").value = btn.dataset.product;
-        document.getElementById("preorder").scrollIntoView({ behavior: "smooth" });
-      });
-    });
-
-    // Forms: send to Formspree without leaving the page.
-    // While the Formspree ID is not set yet, the form runs in "demo mode".
+    /* ================= Forms (Formspree) =================
+       While the Formspree ID is not set, forms run in "demo mode". */
     document.querySelectorAll(".js-form").forEach(form => {
-      form.addEventListener("submit", async (e) => {
+      const msg = form.querySelector(".form-msg");
+      const okText = msg.textContent;
+      form.addEventListener("submit", async e => {
         e.preventDefault();
-        const msg = form.querySelector(".form-msg");
         const demoMode = form.action.includes("YOUR_FORM_ID");
-
         try {
           if (!demoMode) {
-            const res = await fetch(form.action, {
-              method: "POST",
-              body: new FormData(form),
-              headers: { Accept: "application/json" }
-            });
+            const res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
             if (!res.ok) throw new Error("Request failed");
           }
           form.reset();
           msg.style.color = "";
-          msg.textContent = demoMode
-            ? "Demo mode: form works! Add your Formspree ID to receive real messages."
-            : msg.dataset.ok || msg.textContent;
-          msg.classList.add("show");
+          msg.textContent = demoMode ? "Demo mode: the form works! Add your Formspree ID to receive real messages." : okText;
         } catch (err) {
           msg.style.color = "#ff6b6b";
           msg.textContent = "Something went wrong. Please try again or email us.";
-          msg.classList.add("show");
         }
+        msg.classList.add("show");
       });
     });
   </script>
