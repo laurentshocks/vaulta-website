@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "vaulta",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-09-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    { "binding": "WORKER_SELF_REFERENCE", "service": "vaulta" }
+  ],
+  // The database (products, accounts, pre-orders, quotes)
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "vaulta-db",
+      "database_id": "822c46c7-8151-49d9-baf5-aafa46d2b7d2",
+      "migrations_dir": "migrations"
+    }
+  ],
+  // Product photos
+  "r2_buckets": [
+    { "binding": "PHOTOS", "bucket_name": "vaulta-images" }
+  ],
+  "observability": { "enabled": true }
+}

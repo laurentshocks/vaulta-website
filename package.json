@@ -1,0 +1,32 @@
+{
+  "name": "vaulta",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "db:migrate:local": "wrangler d1 migrations apply vaulta-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply vaulta-db --remote",
+    "seed:local": "node scripts/seed.mjs --local",
+    "seed:remote": "node scripts/seed.mjs --remote",
+    "make-admin:local": "node scripts/make-admin.mjs --local",
+    "make-admin:remote": "node scripts/make-admin.mjs --remote",
+    "setup:local": "npm run db:migrate:local && npm run seed:local"
+  },
+  "dependencies": {
+    "@opennextjs/cloudflare": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest",
+    "wrangler": "latest"
+  }
+}

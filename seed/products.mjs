@@ -1,0 +1,328 @@
+// Starting product data (from the Kingsons Autumn/Winter 2026 catalog).
+// After the first setup, manage products in the admin area: /admin/products
+// PRICES ARE PLACEHOLDERS.
+
+export const products = [
+  {
+    id: "metrosecure-pro", sku: "K25834", category: "backpack", price: 179, ribbon: "Flagship", hot: 1, fill: 1,
+    fingerprint: 1, featured: 1, sort: 10,
+    dimensions: "45 × 30 × 15 cm", weight: "1.28 kg", volume: "18 L",
+    images: ["metrosecure.jpg", "metrosecure-fingerprint.jpg", "metrosecure-findmy.jpg", "metrosecure-cut.jpg"],
+    t: {
+      en: {
+        name: "MetroSecure Pro",
+        description: "Smart anti-theft backpack with fingerprint lock and Apple Find My compatibility, designed for business commuters.",
+        points: ["Fingerprint lock on the main compartment", "Dedicated pocket for Apple Find My tracking", "Cut-resistant fabric with double-layer anti-burst zippers", "Well-organised interior compartments"],
+        chips: ["Fingerprint lock", "Cut-resistant", "Find My"],
+        materials: "Cut-resistant fabric + microfiber leather", colours: "Black",
+      },
+      fr: {
+        name: "MetroSecure Pro",
+        description: "Sac à dos antivol intelligent avec serrure à empreinte digitale et compatible Apple Localiser, conçu pour les trajets professionnels.",
+        points: ["Serrure à empreinte digitale sur le compartiment principal", "Poche dédiée au suivi Apple Localiser", "Tissu anti-coupure et fermetures éclair double couche anti-éclatement", "Compartiments intérieurs bien organisés"],
+        chips: ["Empreinte digitale", "Anti-coupure", "Localiser"],
+        materials: "Tissu anti-coupure + cuir microfibre", colours: "Noir",
+      },
+      nl: {
+        name: "MetroSecure Pro",
+        description: "Slimme antidiefstalrugzak met vingerafdrukslot en Apple Zoek mijn-compatibel, ontworpen voor zakelijke pendelaars.",
+        points: ["Vingerafdrukslot op het hoofdvak", "Speciaal vak voor Apple Zoek mijn-tracking", "Snijbestendige stof met dubbellaagse, scheurvaste ritsen", "Goed georganiseerde binnenvakken"],
+        chips: ["Vingerafdrukslot", "Snijbestendig", "Zoek mijn"],
+        materials: "Snijbestendige stof + microvezelleer", colours: "Zwart",
+      },
+    },
+  },
+  {
+    id: "securetrack", sku: "K261206", category: "backpack", price: 159, ribbon: "Patented", hot: 0, fill: 0,
+    fingerprint: 0, featured: 1, sort: 20,
+    dimensions: "46.5 × 30 × 18.5 cm", weight: "1.21 kg", volume: "24 L",
+    images: ["securetrack.jpg", "securetrack-cut.jpg"],
+    t: {
+      en: {
+        name: "SecureTrack Pack",
+        description: "Real-time location tracking, cut-resistant protection, TSA-ready locking and a reinforced zip system.",
+        points: ["Built-in positioning to locate the bag if lost", "Cut-resistant material deters slash theft", "TSA combination lock: airport checks without breaking it", "Double-layer, burst-resistant zipper"],
+        chips: ["Cut-resistant", "Tracking", "TSA lock"],
+        materials: "Cut-resistant material + microfiber leather", colours: "Grey",
+      },
+      fr: {
+        name: "SecureTrack Pack",
+        description: "Localisation en temps réel, protection anti-coupure, cadenas TSA et fermetures éclair renforcées.",
+        points: ["Localisation intégrée pour retrouver le sac", "Matière anti-coupure contre le vol à la lame", "Cadenas à code TSA : contrôles à l'aéroport sans le casser", "Fermeture éclair double couche anti-éclatement"],
+        chips: ["Anti-coupure", "Localisation", "Cadenas TSA"],
+        materials: "Matière anti-coupure + cuir microfibre", colours: "Gris",
+      },
+      nl: {
+        name: "SecureTrack Pack",
+        description: "Realtime locatietracking, snijbestendige bescherming, TSA-slot en versterkte ritsen.",
+        points: ["Ingebouwde lokalisatie om de tas terug te vinden", "Snijbestendig materiaal tegen diefstal met een mes", "TSA-cijferslot: controle op de luchthaven zonder schade", "Dubbellaagse, scheurvaste rits"],
+        chips: ["Snijbestendig", "Tracking", "TSA-slot"],
+        materials: "Snijbestendig materiaal + microvezelleer", colours: "Grijs",
+      },
+    },
+  },
+  {
+    id: "stealth", sku: "K261165", category: "backpack", price: 129, ribbon: null, hot: 0, fill: 0,
+    fingerprint: 0, featured: 0, sort: 30,
+    dimensions: "46.5 × 30 × 18.5 cm", weight: "1.0 kg", volume: "24 L",
+    images: ["stealth.jpg", "stealth-lifestyle.jpg", "stealth-water.jpg"],
+    t: {
+      en: {
+        name: "Stealth Pack",
+        description: "Hidden protection, complete peace of mind. A sleek shell with concealed zips and a TSA lock.",
+        points: ["Concealed zipper and TSA combination lock", "Lightweight, water-resistant fabric", "Fits a 15.6\" laptop and a 12.9\" tablet", "Breathable, ergonomic back support"],
+        chips: ["TSA lock", "Concealed zip", "15.6\" laptop"],
+        materials: "Polyester + microfiber leather", colours: "Black, Grey",
+      },
+      fr: {
+        name: "Stealth Pack",
+        description: "Une protection invisible pour l'esprit tranquille. Coque épurée, fermetures cachées et cadenas TSA.",
+        points: ["Fermeture éclair cachée et cadenas à code TSA", "Tissu léger et déperlant", "Pour un ordinateur 15,6\" et une tablette 12,9\"", "Dos ergonomique et respirant"],
+        chips: ["Cadenas TSA", "Fermeture cachée", "Ordinateur 15,6\""],
+        materials: "Polyester + cuir microfibre", colours: "Noir, Gris",
+      },
+      nl: {
+        name: "Stealth Pack",
+        description: "Onzichtbare bescherming, volledige gemoedsrust. Strakke schaal met verborgen ritsen en een TSA-slot.",
+        points: ["Verborgen rits en TSA-cijferslot", "Lichte, waterafstotende stof", "Past een 15,6\" laptop en een 12,9\" tablet", "Ademende, ergonomische rugsteun"],
+        chips: ["TSA-slot", "Verborgen rits", "15,6\" laptop"],
+        materials: "Polyester + microvezelleer", colours: "Zwart, Grijs",
+      },
+    },
+  },
+  {
+    id: "shield-crossbody", sku: "K260673", category: "small", price: 89, ribbon: "RFID", hot: 0, fill: 0,
+    fingerprint: 1, featured: 1, sort: 40,
+    dimensions: "11 × 18 × 7.5 cm", weight: "0.40 kg", volume: "1 L",
+    images: ["shield.jpg", "shield-lock.jpg", "shield-rfid.jpg"],
+    t: {
+      en: {
+        name: "Shield Crossbody",
+        description: "Compact crossbody with fingerprint lock, slash-resistant fabric and an RFID-blocking card pocket.",
+        points: ["Fingerprint lock protects your belongings", "Slash-resistant fabric", "Durable metal zippers", "RFID-blocking pocket for bank cards", "Hand, shoulder or crossbody carry"],
+        chips: ["Fingerprint lock", "Cut-resistant", "RFID"],
+        materials: "Cut-resistant fabric + microfiber leather", colours: "Black",
+      },
+      fr: {
+        name: "Shield Crossbody",
+        description: "Sacoche bandoulière compacte avec serrure à empreinte, tissu anti-coupure et poche anti-RFID.",
+        points: ["Serrure à empreinte digitale", "Tissu anti-coupure", "Fermetures éclair en métal robustes", "Poche anti-RFID pour cartes bancaires", "À la main, à l'épaule ou en bandoulière"],
+        chips: ["Empreinte digitale", "Anti-coupure", "RFID"],
+        materials: "Tissu anti-coupure + cuir microfibre", colours: "Noir",
+      },
+      nl: {
+        name: "Shield Crossbody",
+        description: "Compacte crossbody met vingerafdrukslot, snijbestendige stof en een RFID-blokkerend kaartvak.",
+        points: ["Vingerafdrukslot beschermt je spullen", "Snijbestendige stof", "Stevige metalen ritsen", "RFID-blokkerend vak voor bankkaarten", "In de hand, over de schouder of crossbody"],
+        chips: ["Vingerafdrukslot", "Snijbestendig", "RFID"],
+        materials: "Snijbestendige stof + microvezelleer", colours: "Zwart",
+      },
+    },
+  },
+  {
+    id: "bio-crossbody", sku: "K260676", category: "small", price: 89, ribbon: null, hot: 0, fill: 0,
+    fingerprint: 1, featured: 0, sort: 50,
+    dimensions: "11.5 × 21 × 6 cm", weight: "0.39 kg", volume: "1 L",
+    images: ["crossbody.jpg", "crossbody-lifestyle.jpg"],
+    t: {
+      en: {
+        name: "Bio Crossbody",
+        description: "Slim crossbody with a fingerprint lock and cut-resistant fabric. Phone, cards and keys, locked.",
+        points: ["Biometric fingerprint lock", "Cut-resistant fabric + microfiber leather", "Water-resistant, quick-access design"],
+        chips: ["Fingerprint lock", "Cut-resistant", "Water-resistant"],
+        materials: "Cut-resistant fabric + microfiber leather", colours: "Black",
+      },
+      fr: {
+        name: "Bio Crossbody",
+        description: "Bandoulière fine avec serrure à empreinte et tissu anti-coupure. Téléphone, cartes et clés, sous clé.",
+        points: ["Serrure biométrique à empreinte digitale", "Tissu anti-coupure + cuir microfibre", "Déperlant, accès rapide"],
+        chips: ["Empreinte digitale", "Anti-coupure", "Déperlant"],
+        materials: "Tissu anti-coupure + cuir microfibre", colours: "Noir",
+      },
+      nl: {
+        name: "Bio Crossbody",
+        description: "Slanke crossbody met vingerafdrukslot en snijbestendige stof. Telefoon, kaarten en sleutels, achter slot.",
+        points: ["Biometrisch vingerafdrukslot", "Snijbestendige stof + microvezelleer", "Waterafstotend, snel toegankelijk"],
+        chips: ["Vingerafdrukslot", "Snijbestendig", "Waterafstotend"],
+        materials: "Snijbestendige stof + microvezelleer", colours: "Zwart",
+      },
+    },
+  },
+  {
+    id: "bio-clutch", sku: "K251366", category: "small", price: 69, ribbon: null, hot: 0, fill: 0,
+    fingerprint: 1, featured: 0, sort: 60,
+    dimensions: "12.5 × 23 × 6.5 cm", weight: "0.20 kg", volume: "1 L",
+    images: ["clutch.jpg", "clutch-lock.jpg"],
+    t: {
+      en: {
+        name: "MetroSecure Bio Clutch",
+        description: "A light everyday pouch for phone, wallet and cables, secured with a fingerprint lock.",
+        points: ["Biometric fingerprint lock", "Water-resistant 400D polyester", "Wrist strap for easy carry"],
+        chips: ["Fingerprint lock", "Water-resistant", "0.2 kg"],
+        materials: "400D polyester + microfiber leather", colours: "Black, Grey, Blue, Green",
+      },
+      fr: {
+        name: "MetroSecure Bio Clutch",
+        description: "Une pochette légère pour téléphone, portefeuille et câbles, protégée par une serrure à empreinte.",
+        points: ["Serrure biométrique à empreinte digitale", "Polyester 400D déperlant", "Dragonne pour un port facile"],
+        chips: ["Empreinte digitale", "Déperlant", "0,2 kg"],
+        materials: "Polyester 400D + cuir microfibre", colours: "Noir, Gris, Bleu, Vert",
+      },
+      nl: {
+        name: "MetroSecure Bio Clutch",
+        description: "Een lichte pouch voor telefoon, portemonnee en kabels, beveiligd met een vingerafdrukslot.",
+        points: ["Biometrisch vingerafdrukslot", "Waterafstotend 400D-polyester", "Polsband om makkelijk te dragen"],
+        chips: ["Vingerafdrukslot", "Waterafstotend", "0,2 kg"],
+        materials: "400D-polyester + microvezelleer", colours: "Zwart, Grijs, Blauw, Groen",
+      },
+    },
+  },
+  {
+    id: "heritage-crossbody", sku: "K260930", category: "small", price: 95, ribbon: null, hot: 0, fill: 0,
+    fingerprint: 1, featured: 0, sort: 70,
+    dimensions: "11 × 18 × 7.5 cm", weight: "0.42 kg", volume: "1 L",
+    images: ["leather.jpg", "leather-lock.jpg", "leather-lifestyle.jpg"],
+    t: {
+      en: {
+        name: "Heritage Crossbody",
+        description: "A refined leather-look crossbody with a fingerprint lock, secure for daily travel.",
+        points: ["Fingerprint lock on the zip", "Hydrolysis-resistant PU that keeps its look for years", "Adjustable crossbody strap and wrist strap"],
+        chips: ["Fingerprint lock", "Water-resistant"],
+        materials: "Hydrolysis-resistant PU", colours: "Black, Grey, Red, Brown",
+      },
+      fr: {
+        name: "Heritage Crossbody",
+        description: "Une bandoulière raffinée aspect cuir avec serrure à empreinte, sûre au quotidien.",
+        points: ["Serrure à empreinte sur la fermeture", "PU résistant à l'hydrolyse qui garde son aspect", "Bandoulière réglable et dragonne"],
+        chips: ["Empreinte digitale", "Déperlant"],
+        materials: "PU résistant à l'hydrolyse", colours: "Noir, Gris, Rouge, Brun",
+      },
+      nl: {
+        name: "Heritage Crossbody",
+        description: "Een verfijnde crossbody in leerlook met vingerafdrukslot, veilig voor dagelijks gebruik.",
+        points: ["Vingerafdrukslot op de rits", "Hydrolysebestendig PU dat jaren mooi blijft", "Verstelbare schouderriem en polsband"],
+        chips: ["Vingerafdrukslot", "Waterafstotend"],
+        materials: "Hydrolysebestendig PU", colours: "Zwart, Grijs, Rood, Bruin",
+      },
+    },
+  },
+  {
+    id: "executive-flap", sku: "K260697", category: "business", price: 109, ribbon: null, hot: 0, fill: 0,
+    fingerprint: 0, featured: 0, sort: 80,
+    dimensions: "42.5 × 32 × 12 cm", weight: "0.80 kg", volume: "16 L",
+    images: ["commuter.jpg", "commuter-lifestyle.jpg"],
+    t: {
+      en: {
+        name: "Executive Flap Backpack",
+        description: "Minimalist business backpack with a clean, professional look for the office and travel.",
+        points: ["1000D abrasion-resistant fabric", "Wide opening for easy access", "Fits up to a 15.6\" laptop"],
+        chips: ["15.6\" laptop", "Water-resistant"],
+        materials: "1000D polyester + microfiber leather", colours: "Black, Grey",
+      },
+      fr: {
+        name: "Executive Flap Backpack",
+        description: "Sac à dos business minimaliste, au look net et professionnel, pour le bureau et les déplacements.",
+        points: ["Tissu 1000D résistant à l'abrasion", "Large ouverture pour un accès facile", "Pour un ordinateur jusqu'à 15,6\""],
+        chips: ["Ordinateur 15,6\"", "Déperlant"],
+        materials: "Polyester 1000D + cuir microfibre", colours: "Noir, Gris",
+      },
+      nl: {
+        name: "Executive Flap Backpack",
+        description: "Minimalistische zakelijke rugzak met een strakke, professionele look voor kantoor en reizen.",
+        points: ["Slijtvaste 1000D-stof", "Brede opening voor makkelijke toegang", "Past een laptop tot 15,6\""],
+        chips: ["15,6\" laptop", "Waterafstotend"],
+        materials: "1000D-polyester + microvezelleer", colours: "Zwart, Grijs",
+      },
+    },
+  },
+  {
+    id: "business-backpack", sku: "K261048", category: "business", price: 99, ribbon: null, hot: 0, fill: 0,
+    fingerprint: 0, featured: 0, sort: 90,
+    dimensions: "45 × 32 × 18 cm", weight: "0.77 kg", volume: "20 L",
+    images: ["biz-k261048.jpg", "biz-lifestyle.jpg"],
+    t: {
+      en: {
+        name: "Business Backpack",
+        description: "Everyday work backpack with quick-access pockets and a luggage strap for business trips.",
+        points: ["Quick-access pockets", "Water-resistant 1000D polyester", "Fits up to a 15.6\" laptop"],
+        chips: ["15.6\" laptop", "Luggage strap"],
+        materials: "1000D polyester + leather", colours: "Black, Grey",
+      },
+      fr: {
+        name: "Business Backpack",
+        description: "Sac à dos de travail avec poches à accès rapide et sangle pour valise.",
+        points: ["Poches à accès rapide", "Polyester 1000D déperlant", "Pour un ordinateur jusqu'à 15,6\""],
+        chips: ["Ordinateur 15,6\"", "Sangle valise"],
+        materials: "Polyester 1000D + cuir", colours: "Noir, Gris",
+      },
+      nl: {
+        name: "Business Backpack",
+        description: "Werkrugzak met snel bereikbare vakken en een kofferband voor zakenreizen.",
+        points: ["Snel bereikbare vakken", "Waterafstotend 1000D-polyester", "Past een laptop tot 15,6\""],
+        chips: ["15,6\" laptop", "Kofferband"],
+        materials: "1000D-polyester + leer", colours: "Zwart, Grijs",
+      },
+    },
+  },
+  {
+    id: "business-backpack-plus", sku: "K260956", category: "business", price: 109, ribbon: null, hot: 0, fill: 0,
+    fingerprint: 0, featured: 0, sort: 100,
+    dimensions: "45 × 30 × 20 cm", weight: "0.85 kg", volume: "21.5 L",
+    images: ["biz-k260956.jpg"],
+    t: {
+      en: {
+        name: "Business Backpack Plus",
+        description: "A roomier work backpack with a front organiser pocket for chargers, cables and documents.",
+        points: ["Front organiser compartment", "Water-resistant 1000D polyester", "Fits up to a 15.6\" laptop"],
+        chips: ["15.6\" laptop", "21.5 L"],
+        materials: "1000D polyester + leather", colours: "Black, Grey",
+      },
+      fr: {
+        name: "Business Backpack Plus",
+        description: "Un sac de travail plus spacieux avec poche avant organisée pour chargeurs, câbles et documents.",
+        points: ["Compartiment avant organisé", "Polyester 1000D déperlant", "Pour un ordinateur jusqu'à 15,6\""],
+        chips: ["Ordinateur 15,6\"", "21,5 L"],
+        materials: "Polyester 1000D + cuir", colours: "Noir, Gris",
+      },
+      nl: {
+        name: "Business Backpack Plus",
+        description: "Een ruimere werkrugzak met organizervak vooraan voor laders, kabels en documenten.",
+        points: ["Organizervak vooraan", "Waterafstotend 1000D-polyester", "Past een laptop tot 15,6\""],
+        chips: ["15,6\" laptop", "21,5 L"],
+        materials: "1000D-polyester + leer", colours: "Zwart, Grijs",
+      },
+    },
+  },
+  {
+    id: "business-handbag", sku: "K25784", category: "business", price: 95, ribbon: null, hot: 0, fill: 0,
+    fingerprint: 0, featured: 0, sort: 110,
+    dimensions: "28.5 × 40 × 10 cm", weight: "0.65 kg", volume: "10.5 L",
+    images: ["handbag.jpg"],
+    t: {
+      en: {
+        name: "Business Handbag",
+        description: "Minimalist laptop handbag for work and daily commuting.",
+        points: ["High-density 1000D polyester", "Microfiber leather handles", "Fits a 16\" MacBook Pro"],
+        chips: ["16\" MacBook Pro", "0.65 kg"],
+        materials: "1000D polyester + microfiber leather", colours: "Black, Grey",
+      },
+      fr: {
+        name: "Business Handbag",
+        description: "Sac à main minimaliste pour ordinateur, pour le travail et les trajets quotidiens.",
+        points: ["Polyester 1000D haute densité", "Poignées en cuir microfibre", "Pour un MacBook Pro 16\""],
+        chips: ["MacBook Pro 16\"", "0,65 kg"],
+        materials: "Polyester 1000D + cuir microfibre", colours: "Noir, Gris",
+      },
+      nl: {
+        name: "Business Handbag",
+        description: "Minimalistische laptophandtas voor werk en dagelijks pendelen.",
+        points: ["Stevig 1000D-polyester", "Handvatten in microvezelleer", "Past een 16\" MacBook Pro"],
+        chips: ["16\" MacBook Pro", "0,65 kg"],
+        materials: "1000D-polyester + microvezelleer", colours: "Zwart, Grijs",
+      },
+    },
+  },
+];
+
+// Photos used on the home page (not linked to one product)
+export const siteImages = ["hero.jpg", "commuter-lifestyle.jpg"];
